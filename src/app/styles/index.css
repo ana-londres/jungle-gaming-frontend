@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@import "./home.css";
+
+@theme {
+  --color-background: #120b08;
+  --color-foreground: #f0e8df;
+  --color-card: #281611;
+  --color-card-foreground: #f0e8df;
+  --color-muted: #2a1a14;
+  --color-muted-foreground: #a79688;
+  --color-border: #42261a;
+  --color-accent: #db9147;
+  --font-sans: "Courier New", Courier, monospace;
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { @apply bg-background; }
+  body { @apply m-0 min-w-80 bg-background text-foreground antialiased; }
+  button, input, select, textarea { font: inherit; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-accent; }
+}

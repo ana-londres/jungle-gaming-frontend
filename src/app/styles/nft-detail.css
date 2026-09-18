@@ -1,0 +1,490 @@
+/* ──────────────────────────────────────────────────────────
+   NftPage — estilos fiel à referência desktop/mobile
+   Usa a mesma tipografia e variáveis do home.css
+   ────────────────────────────────────────────────────────── */
+
+/* Wrapper da página — mesma largura/padding do home */
+.nft-page {
+  width: min(1200px, calc(100% - 64px));
+  margin: 0 auto;
+  padding-top: 22px;
+  font-size: 12px;
+  color: #d9cdc0;
+}
+
+/* ── Shell principal (conteúdo abaixo do header) ─────────── */
+.nft-detail-shell {
+  padding-bottom: 40px;
+}
+
+.nft-feedback {
+  padding: 4rem;
+  text-align: center;
+  color: #a09a96;
+}
+
+/* ── Breadcrumb ──────────────────────────────────────────── */
+.nft-breadcrumb {
+  font-size: 11px;
+  color: #a09a96;
+  margin: 20px 0 18px;
+}
+.nft-breadcrumb a {
+  color: #d9cdc0;
+  text-decoration: none;
+}
+.nft-breadcrumb a:hover { color: #dc934a; }
+
+/* ── Grid produto ────────────────────────────────────────── */
+.nft-product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  margin-bottom: 48px;
+}
+
+/* Coluna de imagens */
+.nft-image-col {
+  display: flex;
+  gap: 14px;
+}
+
+.nft-thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 0 0 80px;
+}
+.nft-thumbnails img {
+  width: 80px;
+  height: 80px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: opacity .15s, border-color .15s;
+}
+.nft-thumbnails img:hover { opacity: 1; }
+.nft-thumbnails img.is-active {
+  border-color: #dc934a;
+  opacity: 1;
+}
+
+.nft-main-image {
+  flex: 1;
+  position: relative;
+}
+.nft-main-image img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  object-fit: cover;
+}
+.zoom-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .45);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Coluna de informações */
+.nft-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 4px;
+}
+
+.nft-title {
+  margin: 0;
+  font-size: 22px;
+  color: #eee9e4;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.nft-price-rating {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.nft-price-eth {
+  font-size: 18px;
+  font-weight: bold;
+  color: #dc934a;
+}
+.nft-rating {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  color: #a09a96;
+}
+.nft-rating span { margin-left: 6px; }
+
+.nft-about {
+  font-size: 11px;
+  line-height: 1.55;
+  color: #c0b6ae;
+}
+.nft-about strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #eee9e4;
+  font-size: 12px;
+}
+.nft-about p { margin: 0; }
+
+.nft-edition-block strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #eee9e4;
+  font-size: 12px;
+}
+.edition-badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.badge {
+  padding: 3px 12px;
+  border: 1px solid #3d2920;
+  border-radius: 999px;
+  font-size: 10px;
+  color: #a09a96;
+}
+.badge.is-active {
+  border-color: #dc934a;
+  color: #dc934a;
+}
+
+/* Ações: quantidade + comprar + favoritar */
+.nft-actions-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  background: #251f1c;
+  border-radius: 6px;
+  padding: 3px;
+}
+.quantity-selector button {
+  background: transparent;
+  border: none;
+  color: #dc934a;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.quantity-selector button:disabled { opacity: .45; cursor: not-allowed; }
+.quantity-selector span {
+  width: 28px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+.buy-btn {
+  flex: 1;
+  height: 36px;
+  background: #dc934a;
+  border: none;
+  border-radius: 6px;
+  color: #1c100a;
+  font-weight: bold;
+  font-size: 11px;
+  cursor: pointer;
+}
+.buy-btn:hover { background: #c97631; }
+
+.fav-btn {
+  height: 36px;
+  padding: 0 16px;
+  background: transparent;
+  border: 1px solid #3d2920;
+  border-radius: 6px;
+  color: #d9cdc0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  cursor: pointer;
+}
+.fav-btn:hover { border-color: #dc934a; color: #dc934a; }
+
+/* Metadados */
+.nft-meta {
+  font-size: 11px;
+  color: #a09a96;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.nft-meta p { margin: 0; }
+
+.nft-share {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  color: #d9cdc0;
+  font-size: 11px;
+}
+
+/* ── Tabs ────────────────────────────────────────────────── */
+.nft-tabs-row {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #3d2920;
+  margin-bottom: 22px;
+}
+.nft-tabs-row button {
+  position: relative;
+  padding: 0 0 10px;
+  margin-right: 28px;
+  border: 0;
+  background: none;
+  color: #a09a96;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.nft-tabs-row button.is-active { color: #dc934a; }
+.nft-tabs-row button.is-active::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  background: #c97631;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+}
+
+/* Conteúdo das tabs */
+.nft-tab-content {
+  font-size: 11px;
+  line-height: 1.65;
+  color: #c0b6ae;
+  margin-bottom: 56px;
+  max-width: 860px;
+}
+.nft-tab-content p { margin: 0 0 14px; }
+.nft-detail-fields { margin-top: 10px; }
+.nft-detail-fields strong { color: #eee9e4; }
+
+/* ── Mais desta coleção ──────────────────────────────────── */
+.collection-section {
+  margin-bottom: 60px;
+}
+.collection-section > h2 {
+  margin: 0 0 22px;
+  font-size: 16px;
+  color: #dc934a;
+  font-weight: bold;
+}
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+.collection-card {
+  min-width: 0;
+}
+.collection-card .nft-image-wrap {
+  height: 180px;
+  overflow: hidden;
+  background: #2a1712;
+  border-radius: 6px;
+}
+.collection-card .nft-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.collection-card-name {
+  margin: 9px 0 4px;
+  font-size: 11px;
+  color: #b9aea4;
+  font-weight: normal;
+}
+.collection-card-price {
+  margin: 0;
+  font-size: 13px;
+  font-weight: bold;
+  color: #dc934a;
+}
+.collection-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 22px;
+}
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3d2920;
+}
+.dot.is-active { background: #dc934a; }
+
+/* ── Newsletter (reutiliza classes do home) ──────────────── */
+/* (já definidas em home.css — apenas garantimos margin-top) */
+.nft-page .newsletter {
+  display: grid;
+  grid-template-columns: 2.75fr 1.25fr;
+  gap: 29px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 31px 31px 24px;
+  background: #2b180f;
+}
+.nft-page .benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 21px;
+}
+.nft-page .benefit {
+  display: flex;
+  gap: 13px;
+}
+.nft-page .benefit > b {
+  display: grid;
+  flex: 0 0 49px;
+  height: 49px;
+  place-content: center;
+  border-radius: 50%;
+  background: #df964c;
+  color: #2a150c;
+  font-size: 16px;
+}
+.nft-page .benefit h3 { margin: 7px 0 8px; color: #e1d4c7; font-size: 12px; }
+.nft-page .benefit p { margin: 0; color: #a68d76; font-size: 10px; line-height: 1.35; }
+.nft-page .newsletter-form {
+  padding-left: 19px;
+  border-left: 1px solid #885735;
+}
+.nft-page .newsletter-form h2 { margin: 0 0 12px; color: #e1d4c7; font-size: 14px; }
+.nft-page .newsletter-form div { display: flex; margin-bottom: 10px; }
+.nft-page .newsletter-form input {
+  min-width: 0;
+  width: 100%;
+  height: 30px;
+  box-sizing: border-box;
+  padding: 0 9px;
+  border: 1px solid #98623b;
+  color: #e2d4c6;
+  background: #201009;
+  font-size: 10px;
+  outline: 0;
+}
+.nft-page .newsletter-form button {
+  width: 68px;
+  border: 0;
+  background: #dc934a;
+  color: #211108;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.nft-page .newsletter-form p { margin: 0; color: #a68d76; font-size: 10px; line-height: 1.35; }
+
+/* ── Footer (idêntico ao home, reutiliza classes) ────────── */
+.nft-page .site-footer {
+  padding: 28px 29px 19px;
+  background: #29170f;
+  margin-top: 0;
+}
+.nft-page .footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr;
+  align-items: center;
+  padding-bottom: 23px;
+  border-bottom: 1px solid #4b2d1d;
+  color: #b6a18e;
+  font-size: 10px;
+}
+.nft-page .footer-top img { width: 42px; filter: brightness(2); }
+.nft-page .footer-links {
+  display: grid;
+  grid-template-columns: 1.1fr 1.1fr 1.1fr 1fr;
+  gap: 38px;
+  padding: 28px 0 21px;
+}
+.nft-page .footer-links h3 { margin: 0 0 12px; color: #dbd0c4; font-size: 12px; }
+.nft-page .footer-links a {
+  display: block;
+  margin: 0 0 8px;
+  color: #a99482;
+  text-decoration: none;
+  font-size: 10px;
+}
+.nft-page .socials { display: flex; gap: 5px; margin: 0 0 21px; color: #dd954c; }
+.nft-page .socials svg {
+  box-sizing: content-box;
+  width: 14px;
+  height: 14px;
+  padding: 3px;
+  border: 1px solid #a66b3c;
+}
+.nft-page .wallet-badges {
+  display: inline-block;
+  padding: 5px 7px;
+  background: #78421d;
+  color: #d3a372;
+  font-size: 7px;
+}
+.nft-page .copyright {
+  margin: 20px 0 18px;
+  color: #a28d7a;
+  text-align: center;
+  font-size: 10px;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .nft-product-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .nft-thumbnails { display: none; }
+  .collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .nft-page {
+    width: calc(100% - 32px);
+  }
+  .nft-page .newsletter {
+    grid-template-columns: 1fr;
+  }
+  .nft-page .benefits {
+    grid-template-columns: 1fr;
+  }
+  .nft-page .footer-top,
+  .nft-page .footer-links {
+    grid-template-columns: 1fr 1fr;
+  }
+  .collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
