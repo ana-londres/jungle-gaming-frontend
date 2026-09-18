@@ -1,6 +1,7 @@
 import { delay, http, HttpResponse } from 'msw'
 import { compareEth } from '@/lib/eth'
 import { nftFixtures } from '@/mocks/fixtures/nfts'
+import type { CreateOrderInput, Order } from '@/api/contracts/order'
 
 export const handlers = [
   http.get('/api/health', () => HttpResponse.json({ status: 'ok' })),
@@ -38,5 +39,12 @@ export const handlers = [
     const nft = nftFixtures.find((n) => n.id === params.id)
     if (!nft) return HttpResponse.json({ code: 'NOT_FOUND', message: 'NFT não encontrado.' }, { status: 404 })
     return HttpResponse.json(nft)
+  }),
+  http.post('/api/orders', async ({ request }) => {
+    const input = await request.json() as CreateOrderInput
+    if (!input.items.length) return HttpResponse.json({ code: 'EMPTY_CART', message: 'Carrinho vazio.' }, { status: 400 })
+    await delay(350)
+    const order: Order = { id: 'order-confirmed-001', version: 1, status: 'confirmed', transactionReference: '0xA91F...E82C', items: input.items, subtotalEth: input.subtotalEth, discountEth: input.discountEth, networkFeeEth: input.networkFeeEth, totalEth: input.totalEth, createdAt: '2026-07-29T12:00:00.000Z' }
+    return HttpResponse.json(order, { status: 201 })
   }),
 ]

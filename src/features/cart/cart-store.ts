@@ -46,6 +46,10 @@ export function removeFromCart(nftId: string) {
   save({ items: state.items.filter((item) => item.nft.id !== nftId) })
 }
 
+export function clearCart() {
+  save({ items: [] })
+}
+
 export function useCart() {
   return useSyncExternalStore(
     (listener) => { listeners.add(listener); return () => listeners.delete(listener) },

@@ -21,4 +21,9 @@ export interface CreateOrderInput {
   idempotencyKey: string
   walletId: string
   network: string
+  items: CartItem[]
+  subtotalEth: EthAmount
+  discountEth: EthAmount
+  networkFeeEth: EthAmount
+  totalEth: EthAmount
 }

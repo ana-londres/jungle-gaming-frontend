@@ -1,8 +1,10 @@
-import { createRootRoute, createRoute, createRouter, Outlet } from '@tanstack/react-router'
+import { createRootRoute, createRoute, createRouter, Outlet, redirect } from '@tanstack/react-router'
 import { HomePage } from '@/routes/HomePage'
 import { NftPage } from '@/routes/NftPage'
 import { CartPage } from '@/routes/CartPage'
 import { CheckoutPage } from '@/routes/CheckoutPage'
+import { ConfirmationPage } from '@/routes/ConfirmationPage'
+import { getConfirmedOrder } from '@/features/orders/confirmed-order'
 
 export interface HomeSearch {
   q?: string
@@ -42,8 +44,16 @@ const nftRoute = createRoute({
 
 const cartRoute = createRoute({ getParentRoute: () => rootRoute, path: '/cart', component: CartPage })
 const checkoutRoute = createRoute({ getParentRoute: () => rootRoute, path: '/checkout', component: CheckoutPage })
+const confirmationRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/confirmation',
+  beforeLoad: () => {
+    if (!getConfirmedOrder()) throw redirect({ to: '/cart' })
+  },
+  component: ConfirmationPage,
+})
 
-const routeTree = rootRoute.addChildren([indexRoute, nftRoute, cartRoute, checkoutRoute])
+const routeTree = rootRoute.addChildren([indexRoute, nftRoute, cartRoute, checkoutRoute, confirmationRoute])
 
 export const router = createRouter({ routeTree })
 

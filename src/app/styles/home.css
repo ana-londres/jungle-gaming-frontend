@@ -1,4 +1,5 @@
-.home-page { width: min(1200px, calc(100% - 64px)); margin: 0 auto; padding-top: 22px; font-size: 12px; color: #d9cdc0; }
+.home-page { font-family: 'Space Mono', monospace; width: min(1200px, calc(100% - 64px)); margin: 0 auto; padding-top: 22px; font-size: 12px; color: #d9cdc0; }
+.home-page input, .home-page button, .home-page select { font-family: inherit; }
 .site-header { height: 46px; border-bottom: 1px solid #392117; display: grid; grid-template-columns: 180px 1fr 260px; align-items: start; }
 .site-logo { width: 45px; height: auto; margin: 5px 0 0 2px; filter: brightness(2); }
 .primary-nav { display: flex; justify-content: center; height: 46px; gap: 39px; }
@@ -15,9 +16,9 @@
 .header-search input { width: 100%; border: 0; outline: 0; color: #efe5da; background: transparent; font-size: 11px; }
 .header-search button { color: #d99047; background: none; border: 0; }
 .hero-section { display: grid; grid-template-columns: 1.18fr .82fr; gap: 58px; min-height: 513px; padding: 76px 37px 48px; }
-.hero-copy { padding-top: 5px; }.hero-copy > p { color: #b7aaa0; font-size: 11px; font-weight: bold; letter-spacing: .08em; }
-.hero-copy h1 { margin: 20px 0 15px; color: #eee9e4; font-size: 35px; line-height: 1.38; letter-spacing: .01em; }
-.hero-copy span { display: block; color: #9d8875; font-size: 11px; line-height: 1.48; font-weight: bold; }.amber-button { margin-top: 24px; padding: 10px 26px; font-size: 11px; }
+.hero-copy { padding-top: 5px; }.hero-copy > p { color: #b7aaa0; font-family: 'Space Mono', monospace; font-size: 11px; font-weight: bold; letter-spacing: .08em; }
+.hero-copy h1 { margin: 20px 0 15px; color: #eee9e4; font-family: 'Space Mono', monospace; font-size: 43px; line-height: 70px; font-weight: 700; letter-spacing: 0; }
+.hero-copy span { display: block; color: #9d8875; font-family: 'Space Mono', monospace; font-size: 11px; line-height: 1.48; font-weight: bold; }.amber-button { margin-top: 24px; padding: 10px 26px; font-size: 11px; }
 .hero-art { position: relative; }.hero-art img { width: 100%; height: 418px; object-fit: cover; object-position: 50% 25%; border-radius: 20px; background: #d4d1ad; }
 .carousel-dots { display: flex; justify-content: center; gap: 7px; padding-top: 13px; }.carousel-dots i { width: 7px; height: 7px; border-radius: 50%; background: #daa05e; }.carousel-dots i:first-child { background: #bf7130; }
 .marketplace-shell { display: grid; grid-template-columns: 307px 1fr; gap: 48px; margin-top: 3px; }

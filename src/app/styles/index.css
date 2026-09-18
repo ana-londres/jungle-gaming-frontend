@@ -10,7 +10,7 @@
   --color-muted-foreground: #a79688;
   --color-border: #42261a;
   --color-accent: #db9147;
-  --font-sans: "Courier New", Courier, monospace;
+  --font-sans: "Space Mono", monospace;
 }
 
 @layer base {
