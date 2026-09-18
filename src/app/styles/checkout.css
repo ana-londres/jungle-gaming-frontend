@@ -3,6 +3,7 @@
 @media(max-width:900px){.checkout-header,.checkout-shell,.checkout-footer{width:min(680px,calc(100% - 48px))}.checkout-header{grid-template-columns:55px minmax(0,1fr) auto}.checkout-header .primary-nav{gap:15px}.checkout-header .header-actions{width:auto}.checkout-layout{grid-template-columns:1fr}.checkout-footer .newsletter{grid-template-columns:1fr}.checkout-footer .benefits{grid-template-columns:repeat(3,1fr)}.checkout-footer .newsletter-form{border-left:0;border-top:1px solid #885735;padding:20px 0 0}.checkout-footer .footer-top{grid-template-columns:1fr 1fr;gap:18px}}
 @media(max-width:600px){.checkout-page{overflow-x:hidden}.checkout-header{width:calc(100% - 48px);height:58px;grid-template-columns:48px 1fr auto;align-items:center}.checkout-header .primary-nav,.checkout-header .header-actions>:first-child,.checkout-header .enter-button{display:none}.checkout-header .site-logo{margin:0}.checkout-shell{width:100%;box-sizing:border-box;padding:20px 24px 48px}.checkout-layout{gap:38px}.form-grid{grid-template-columns:1fr;gap:15px}.notes{width:auto}.checkout-item{grid-template-columns:58px minmax(0,1fr) auto;min-height:58px}.checkout-item img{width:58px;height:58px}.checkout-item>b{font-size:12px}.checkout-footer{width:100%}.checkout-footer .newsletter{grid-template-columns:1fr;margin:0;padding:28px 24px}.checkout-footer .benefits{grid-template-columns:1fr}.checkout-footer .footer-top{grid-template-columns:1fr 1fr;padding:24px}.confirm-purchase{height:54px}}
 .confirm-purchase:disabled{opacity:.6;cursor:not-allowed}.checkout-order-error{margin:16px 0 -8px;color:#e99371;text-align:center}
+.collector-form .field-error{color:#e99371;font-size:10px}.collector-form input[aria-invalid="true"],.collector-form select[aria-invalid="true"]{border-color:#e99371}
 
 @media (max-width: 600px) {
   .checkout-page { min-height: 100vh; padding-bottom: 96px; }
@@ -11,6 +12,7 @@
   .checkout-breadcrumb { display: none; }
   .checkout-layout { display: block; }
   .collector-form { display: none; }
+  .collector-form:has(.field-error) { display: block; }
   .checkout-summary { position: relative; padding-top: 66px; }
   .checkout-summary::before { content: 'Pagamento com carteira'; position: absolute; top: 7px; left: 0; color: #eee3d8; font-size: 20px; font-weight: bold; }
   .checkout-summary::after { content: 'Carteira conectada\A\A Reserva                                      ⋮\A nova.kurio.eth\A Rede Polygon'; white-space: pre-wrap; display: block; box-sizing: border-box; min-height: 104px; margin: 16px 0 18px; padding: 15px 54px; border-radius: 12px; background: #261611; color: #d7b386; font-size: 13px; line-height: 1.65; }
