@@ -129,7 +129,16 @@ Não há comando ou mecanismo de reset de cenários implementado. Para reiniciar
 
 ## Limitações conhecidas
 
-- Não há backend real, autenticação, cadastro, integração de carteira, pagamento ou blockchain.
-- Os dados de catálogo e a resposta de pedido são estáticos/simulados pelo MSW.
-- O pedido confirmado do mock usa identificador, referência de transação e data fixos.
-- O fluxo E2E atual é validado apenas no perfil desktop; o projeto mobile do Playwright está configurado, mas esse teste é ignorado.
+A implementação foi priorizada para entregar um fluxo principal de descoberta e compra funcional, responsivo e testado dentro do prazo do desafio. Os pontos abaixo permanecem simplificados ou não implementados:
+
+* Backend e integrações reais: não há backend real, autenticação real, cadastro, integração com carteiras, processamento de pagamento ou blockchain. Essas partes são simuladas conforme o escopo do desafio.
+* Autenticação e conta: as telas e fluxos de login, cadastro, sessão autenticada, perfil do colecionador e gerenciamento de carteiras não foram implementados nesta versão.
+* Catálogo: o catálogo utiliza dados estáticos fornecidos pelo MSW. A implementação não contempla toda a variedade de NFTs e imagens apresentada nas referências do Figma.
+* Compra: o fluxo de compra foi implementado através de Axios + MSW, com `POST /api/orders` e resposta simulada de confirmação. Não há processamento financeiro ou transação blockchain real.
+* Pedido confirmado: identificador do pedido, referência de transação e data são gerados pelo cenário mock e não representam uma transação real.
+* Realtime: não foi implementada a cobertura completa de eventos em tempo real com Socket.IO prevista no desafio, incluindo atualização de preço/disponibilidade durante o checkout e reconciliação de pedidos pendentes.
+* Cenários de falha: não foram implementados todos os cenários de erro e recuperação previstos no desafio, como expiração de sessão, alteração de preço durante a compra, conflitos de disponibilidade, cupons inválidos/expirados, timeout após criação do pedido e recuperação por idempotência.
+* Testes E2E: foi implementado e validado um teste E2E do fluxo principal de compra com Playwright, incluindo execução em Chromium desktop e mobile. A cobertura ainda não contempla todos os 12 grupos de cenários especificados no desafio.
+* Lighthouse: não foi realizada uma rodada completa de auditoria e otimização conforme as metas de Lighthouse especificadas no desafio.
+
+Essas simplificações foram adotadas para priorizar, dentro do prazo disponível, a entrega do fluxo principal, sua responsividade, a simulação de API, os testes E2E e a documentação do projeto.
