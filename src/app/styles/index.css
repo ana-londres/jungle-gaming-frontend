@@ -16,7 +16,7 @@
 @layer base {
   * { @apply border-border; }
   html { @apply bg-background; }
-  body { @apply m-0 min-w-80 bg-background text-foreground antialiased; }
+  body { @apply m-0 min-w-80 bg-background text-foreground antialiased; font-family: "Space Mono", monospace; }
   button, input, select, textarea { font: inherit; }
   :focus-visible { @apply outline-2 outline-offset-2 outline-accent; }
 }
