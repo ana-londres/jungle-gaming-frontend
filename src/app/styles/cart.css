@@ -95,4 +95,8 @@
   .checkout-button { height: 60px; border-radius: 30px; font-size: 14px; }
   .continue-link { display: none; }
   .cart-recommendations { display: none; }
+  .cart-shell::before { content: 'Carrinho de NFTs'; display: block; margin: -7px 0 16px; color: #eee3d8; text-align: center; font-size: 20px; font-weight: bold; }
+  .cart-item { background: #261611; }
+  .cart-item-name span::before { content: 'Edição: '; }
+  .cart-summary { margin: 24px -24px 0; padding: 24px; border-radius: 32px 32px 0 0; }
 }

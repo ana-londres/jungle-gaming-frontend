@@ -33,3 +33,36 @@
 .journal-section { text-align: center; }.journal-section > h2 { margin: 0; color: #e4dbd2; font-size: 22px; }.journal-section > p { margin: 11px 0 32px; color: #a58d76; font-size: 10px; }.journal-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 23px; text-align: left; }.journal-card { overflow: hidden; background: #2a1712; border-radius: 5px; }.journal-card > img { width: 100%; height: 178px; object-fit: cover; }.journal-image--1 { object-position: 25% center; }.journal-image--2 { object-position: 70% center; }.journal-image--3 { object-position: 35% center; }.journal-card > div { padding: 13px 11px 16px; }.journal-card small { color: #a28b75; font-size: 9px; }.journal-card h3 { min-height: 30px; margin: 12px 0 8px; color: #ddd1c5; font-size: 12px; line-height: 1.25; }.journal-card p { min-height: 40px; margin: 0 0 8px; color: #a58f7a; font-size: 10px; line-height: 1.3; }.journal-card button { display: flex; align-items: center; gap: 3px; padding: 0; border: 0; color: #dc934a; background: transparent; font-size: 10px; cursor: pointer; }
 .newsletter { display: grid; grid-template-columns: 2.75fr 1.25fr; gap: 29px; margin-top: 85px; padding: 31px 31px 24px; background: #2b180f; }.benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 21px; }.benefit { display: flex; gap: 13px; }.benefit > b { display: grid; flex: 0 0 49px; height: 49px; place-content: center; border-radius: 50%; background: #df964c; color: #2a150c; font-size: 16px; }.benefit h3, .newsletter-form h2 { margin: 7px 0 8px; color: #e1d4c7; font-size: 12px; }.benefit p, .newsletter-form p { margin: 0; color: #a68d76; font-size: 10px; line-height: 1.35; }.newsletter-form { padding-left: 19px; border-left: 1px solid #885735; }.newsletter-form h2 { margin-top: 0; font-size: 14px; line-height: 1; }.newsletter-form div { display: flex; margin: 12px 0; }.newsletter-form input { min-width: 0; width: 100%; height: 30px; box-sizing: border-box; padding: 0 9px; border: 1px solid #98623b; color: #e2d4c6; background: #201009; font-size: 10px; outline: 0; }.newsletter-form button { width: 68px; background: #dc934a; color: #211108; font-size: 11px; font-weight: bold; }
 .site-footer { padding: 28px 29px 19px; background: #29170f; }.footer-top { display: grid; grid-template-columns: 1.5fr 1.5fr 1fr 1fr; align-items: center; padding-bottom: 23px; border-bottom: 1px solid #4b2d1d; color: #b6a18e; font-size: 10px; }.footer-top img { width: 42px; filter: brightness(2); }.footer-links { display: grid; grid-template-columns: 1.1fr 1.1fr 1.1fr 1fr; gap: 38px; padding: 28px 0 21px; }.footer-links h3 { margin: 0 0 12px; color: #dbd0c4; font-size: 12px; }.footer-links a { display: block; margin: 0 0 8px; color: #a99482; text-decoration: none; font-size: 10px; }.socials { display: flex; gap: 5px; margin: 0 0 21px; color: #dd954c; }.socials svg { box-sizing: content-box; width: 14px; height: 14px; padding: 3px; border: 1px solid #a66b3c; }.wallet-badges { display: inline-block; padding: 5px 7px; background: #78421d; color: #d3a372; font-size: 7px; }.copyright { margin: 20px 0 18px; color: #a28d7a; text-align: center; font-size: 10px; }
+
+@media (max-width: 600px) {
+  .home-page { width: calc(100% - 24px); margin: 0 auto; padding: 24px 12px 34px; box-sizing: border-box; overflow: hidden; }
+  .home-page .site-header { height: 62px; grid-template-columns: 1fr auto; gap: 10px; border: 0; align-items: center; }
+  .home-page .site-logo, .home-page .primary-nav, .home-page .cart-icon, .home-page .enter-button { display: none; }
+  .home-page .header-actions { display: contents; }
+  .home-page .header-actions::before { content: '⌕  Explorar coleções'; display: flex; align-items: center; height: 46px; padding: 0 16px; border-radius: 11px; background: #281611; color: #c79c67; font-size: 13px; font-weight: bold; letter-spacing: .02em; }
+  .home-page .header-actions > .header-icon:first-of-type { display: grid; width: 46px; height: 46px; place-items: center; border-radius: 13px; background: #d88d47; color: #29150b; }
+  .hero-section { grid-template-columns: 1fr 142px; gap: 0; min-height: 186px; margin-top: 14px; padding: 0 16px; overflow: hidden; border-radius: 24px; background: radial-gradient(circle at 58% 46%, #9a6237 0 29%, #62391f 30%, #281611 69%); }
+  .hero-copy { position: relative; z-index: 1; padding-top: 11px; }
+  .hero-copy > p { margin: 0 0 7px; font-size: 10px; }
+  .hero-copy h1 { margin: 0; font-size: 19px; line-height: 1.45; }
+  .hero-copy span { margin-top: 8px; font-size: 10px; line-height: 1.45; }
+  .hero-copy span br { display: none; }
+  .amber-button { margin-top: 3px; padding: 0; color: #e39a4e; background: transparent; font-size: 10px; }
+  .hero-art { align-self: center; }
+  .hero-art img { width: 142px; height: 142px; border-radius: 16px; object-position: 48% center; }
+  .carousel-dots { position: absolute; right: 38px; bottom: 4px; }
+  .marketplace-shell { display: block; margin-top: 17px; }
+  .catalog-sidebar { display: none; }
+  .catalog-toolbar { margin: 0 0 16px; min-height: 24px; overflow: hidden; }
+  .catalog-tabs { gap: 16px; white-space: nowrap; }
+  .catalog-tabs button { padding-bottom: 7px; font-size: 11px; }
+  .catalog-tabs button:nth-child(2), .catalog-tabs button:nth-child(3) { font-size: 0; }
+  .catalog-tabs button:nth-child(2)::after { content: 'Novos lançamentos'; font-size: 11px; }
+  .catalog-tabs button:nth-child(3)::after { content: 'Em alta'; font-size: 11px; }
+  .sort-select { display: none; }
+  .nft-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 18px; }
+  .nft-image-wrap { height: auto; aspect-ratio: 1 / 1.16; border-radius: 15px; }
+  .nft-card h3 { margin: 10px 8px 3px; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .nft-price { margin-left: 8px; font-size: 14px; }
+  .pagination, .promotion-row, .journal-section, .newsletter, .home-page .site-footer, .home-page .copyright { display: none; }
+}
