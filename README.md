@@ -4,6 +4,33 @@ Aplicação front-end de um marketplace de NFTs criada para o challenge. Ela per
 
 > APIs, pagamento e blockchain são simulados. Nenhuma transação on-chain, carteira real ou cobrança é realizada.
 
+## Demonstração
+
+**Aplicação publicada:** https://jungle-gaming-frontend.vercel.app/
+
+O fluxo principal de compra pode ser testado diretamente na aplicação publicada: Home → detalhe do NFT → carrinho → checkout → confirmação.
+
+## Testes E2E
+
+O Playwright está configurado para iniciar o servidor Vite em `http://127.0.0.1:4173` durante os testes.
+
+```bash
+# Executa os testes E2E
+npm run test:e2e
+
+# Abre a interface do Playwright
+npm run test:e2e:ui
+
+# Abre o último relatório HTML
+npm run test:e2e:report
+```
+
+Os testes atuais cobrem o fluxo principal de compra no Chromium desktop e mobile: Home → detalhe do NFT → carrinho → checkout → confirmação.
+
+O fluxo também valida que `/confirmation` redireciona para o carrinho quando não existe pedido confirmado, que a navegação para a confirmação acontece somente após o `POST /api/orders` retornar `201` e que as principais etapas não apresentam overflow horizontal no mobile.
+
+A cobertura ainda não contempla todos os 12 grupos de cenários especificados no desafio.
+
 ## Stack
 
 - React 19 e TypeScript
@@ -133,7 +160,7 @@ A implementação foi priorizada para entregar um fluxo principal de descoberta 
 
 * Backend e integrações reais: não há backend real, autenticação real, cadastro, integração com carteiras, processamento de pagamento ou blockchain. Essas partes são simuladas conforme o escopo do desafio.
 * Autenticação e conta: as telas e fluxos de login, cadastro, sessão autenticada, perfil do colecionador e gerenciamento de carteiras não foram implementados nesta versão.
-* Catálogo: o catálogo utiliza dados estáticos fornecidos pelo MSW. A implementação não contempla toda a variedade de NFTs e imagens apresentada nas referências do Figma.
+* Catálogo: o catálogo utiliza dados estáticos fornecidos pelo MSW e não representa uma integração com um catálogo real.
 * Compra: o fluxo de compra foi implementado através de Axios + MSW, com `POST /api/orders` e resposta simulada de confirmação. Não há processamento financeiro ou transação blockchain real.
 * Pedido confirmado: identificador do pedido, referência de transação e data são gerados pelo cenário mock e não representam uma transação real.
 * Realtime: não foi implementada a cobertura completa de eventos em tempo real com Socket.IO prevista no desafio, incluindo atualização de preço/disponibilidade durante o checkout e reconciliação de pedidos pendentes.
